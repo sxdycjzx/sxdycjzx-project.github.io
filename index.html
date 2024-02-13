@@ -37,15 +37,25 @@
             font-size: 24px;
             margin-bottom: 10px;
             padding: 10px;
-            transition: box-shadow 0.3s; /* 添加过渡效果 */
         }
         .event-item h2:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 悬停时添加阴影效果 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .event-item p {
             color: #fff;
         }
     </style>
+    <script>
+        var h2Elements = document.querySelectorAll('.event-item h2');
+        for (var i = 0; i < h2Elements.length; i++) {
+            h2Elements[i].addEventListener('mouseover', function() {
+                this.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            });
+            h2Elements[i].addEventListener('mouseout', function() {
+                this.style.boxShadow = '';
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>传统文化节活动介绍</h1>
@@ -66,5 +76,6 @@
     </ul>
 </body>
 </html>
+
 
 
